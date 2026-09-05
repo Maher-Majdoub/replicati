@@ -1,9 +1,27 @@
+#include <cctype>
 #include <iostream>
 #include "node/node.hpp"
 
-int main() {
-  std::cout << "Hello World!\n";
+using namespace replicati;
 
-  replicati::Node node = replicati::Node();
-  node.sayHello();
+int main() {
+  Node node = Node(LEADER);
+
+  while (true) {
+    std::cout << "% ";
+
+    std::string command, key, value; 
+    std::cin >> command;
+    
+    if (command == "set") {
+      std::cin >> key >> value;
+      node.set(key, value);
+    } 
+
+    else if (command == "get") {
+      std::cin >> key;
+      auto value = node.get(key);
+      std::cout << (value ? *value : "NOT FOUND!") << "\n";
+    }
+  }
 }
