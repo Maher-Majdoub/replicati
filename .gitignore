@@ -1,0 +1,19 @@
+# CMake build directory
+build/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+
+# Compiled binaries
+*.out
+*.exe
+compile_commands.json
+
+# VSCode settings
+.vscode/
+
+.cache/
+.local/
