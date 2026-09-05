@@ -1,8 +1,9 @@
 #pragma once
 
+#include "../storage/storage_engine.hpp"
+
 #include <string>
 #include <optional>
-#include <unordered_map>
 
 namespace replicati {
 
@@ -14,7 +15,7 @@ enum NodeRole {
 class Node {
 private:
   NodeRole _role;
-  std::unordered_map<std::string, std::string> _storage;
+  StorageEngine _storage;
 
 
 public:
